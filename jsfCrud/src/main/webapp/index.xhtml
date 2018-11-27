@@ -6,9 +6,11 @@
       xmlns:ui="http://java.sun.com/jsf/facelets">
    <h:head>
    </h:head>
-
+   <ui:insert name = "header" >
+       <ui:include src = "/header.xhtml" />
+    </ui:insert>  
    <h:body>
-   	Hello
+    <h:link value="Access the Application" outcome="user"></h:link>
    </h:body>
    
 </html>
