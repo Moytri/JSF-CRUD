@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core">
    <h:head>
-   </h:head> 
+   </h:head>
    <h:body>
-	   <!--  render is used to check the role -->
+    	<!--  render is used to check the role -->
 	   <!-- f:event is used to autocall the bean method -->
 	   <f:event listener="#{authBean.redirect}" type="preRenderView"/>
    </h:body>
