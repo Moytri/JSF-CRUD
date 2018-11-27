@@ -28,5 +28,24 @@
    <context-param>
       <param-name>javax.faces.PROJECT_STAGE</param-name>
       <param-value>Development</param-value>
-   </context-param>  
+   </context-param>
+   <security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Access the Application</web-resource-name>
+			<url-pattern>/faces/user.xhtml</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>admin</role-name>
+			<role-name>user</role-name>
+		</auth-constraint>
+	</security-constraint>
+	
+  	<!-- Tell the server to use form-based authentication. -->
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<form-login-config>
+			<form-login-page>/faces/application/login.xhtml</form-login-page>
+			<form-error-page>/faces/application/login-error.xhtml</form-error-page>
+		</form-login-config>
+	</login-config>	     
 </web-app>
