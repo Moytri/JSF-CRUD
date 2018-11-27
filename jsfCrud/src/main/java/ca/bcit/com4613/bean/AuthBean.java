@@ -19,10 +19,10 @@ public class AuthBean implements Serializable{
 	    ExternalContext context = FacesContext.getCurrentInstance().getExternalContext();
 
 	    if (context.isUserInRole("admin")){
-	        context.redirect("admin/index.xhtml");
+	        context.redirect("faces/admin/index.xhtml");
 	    }
 	    else {
-	        context.redirect("user/index.xhtml");
+	        context.redirect("faces/user/index.xhtml");
 	    }
 	}
 	
