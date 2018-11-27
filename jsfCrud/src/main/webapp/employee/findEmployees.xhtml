@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+   <h:head>
+   </h:head> 		
+   <h:body columnClasses="findEmployees">
+		<ui:composition>
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<div class="panel-title">Find an Employee By ID</div>
+				</div>	
+				<div style="padding-top: 15px" class="panel-body">			
+					<h:form class="form-horizontal">
+						<div class="form-group row">
+						    <label for="id" class="col-sm-3 col-form-label">ID</label>
+						    <div class="col-sm-9">
+						       <h:inputText name="id" value="id"></h:inputText>
+							   <h:inputHidden name="role" value="role"></h:inputHidden>
+						    </div>
+						 </div>	
+						 	<h:commandButton value="#{msgs.findBtn}"/>				 						 			
+					</h:form>		
+				</div>
+			</div>
+		</ui:composition>
+   </h:body>		  
+</html>
