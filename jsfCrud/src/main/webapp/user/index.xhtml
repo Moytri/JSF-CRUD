@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+   <h:head>
+        <h:outputStylesheet library="css" name="userpage.css"/>
+		<h:outputStylesheet library="css" name="bootstrap.min.css" />   
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   </h:head>
+   <h:body>
+	<div class="container-fluid fill" style="background-color:#f5f5f5;">
+	  <div class="row">	  
+	    
+	    <div class="col-sm-8">
+		  <div class="row">
+		    <div class="col-sm-12">
+		    	<h3>findEmployees</h3>
+			</div>
+		  </div>	    
+		  <div class="row">
+		    <div class="col-sm-12">
+				<ui:insert name="logout">
+					<ui:include src="/application/logout.xhtml" />
+				</ui:insert>
+			</div>
+		  </div>	    	    	
+		</div>
+		
+	    <div class="col-sm-4" style="background-color:#f5f5f5; padding-top: 20px;">	
+			<ui:insert name="findEmployees">
+				<ui:include src="/employee/findEmployees.xhtml" />
+			</ui:insert>	    
+	    </div>
+	   
+	   </div>
+	  </div>	    
+   </h:body>
+</html>
