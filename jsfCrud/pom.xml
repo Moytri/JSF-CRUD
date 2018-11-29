@@ -39,8 +39,9 @@
 	<dependency>
 	    <groupId>javax.enterprise</groupId>
 	    <artifactId>cdi-api</artifactId>
-    	<version>1.2</version>
-	</dependency>	
+	    <version>1.2</version>
+	</dependency>
+		
   </dependencies> 
   
   <build>
