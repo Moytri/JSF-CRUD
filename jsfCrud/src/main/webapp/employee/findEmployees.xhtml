@@ -16,15 +16,25 @@
 				</div>	
 				<div style="padding-top: 15px" class="panel-body">			
 					<h:form class="form-horizontal">
-						<div class="form-group row">
+						<div class="form-group row"  style="width:400px;">
 						    <label for="id" class="col-sm-3 col-form-label">ID</label>
-						    <div class="col-sm-9">
-						       <h:inputText name="id" value="id"></h:inputText>
-							   <h:inputHidden name="role" value="role"></h:inputHidden>
+							<div class="col-sm-9">
+						       <h:inputText name="id" value="#{employeesBean.id}" style="width:270px;"></h:inputText>
+							   <h:inputHidden name="role" value="user"></h:inputHidden>
 						    </div>
 						 </div>	
-						 	<h:commandButton value="#{msgs.findBtn}"/>				 						 			
-					</h:form>		
+						 	<h:commandButton value="#{msgs.findBtn}" action="#{employeesBean.findEmployee}"
+						 	class="btn btn-default" style="float: right;"/>				 						 			
+					</h:form>
+					<h:outputLabel rendered="#{employeesBean.response.code == '000'}" >           
+		     			<h6>Result Code: <h:outputText value="${employeesBean.response.code}"/> 
+		     			Description: <h:outputText value="${employeesBean.response.message}"/></h6>
+					</h:outputLabel>
+					<h:outputLabel rendered="#{employeesBean.response.code == '901' and 
+									employeesBean.requestedOperation == 'findEmployee'}" >           
+		     			<h6>Result Code: <h:outputText value="${employeesBean.response.code}"/> 
+		     			 Description: <h:outputText value="${employeesBean.response.message}"/></h6>
+					</h:outputLabel>		
 				</div>
 			</div>
 		</ui:composition>
