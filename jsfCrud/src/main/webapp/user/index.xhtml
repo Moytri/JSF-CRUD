@@ -29,9 +29,16 @@
 		</div>
 		
 	    <div class="col-sm-4" style="background-color:#f5f5f5; padding-top: 20px;">	
-			<ui:insert name="findEmployees">
-				<ui:include src="/employee/findEmployees.xhtml" />
-			</ui:insert>	    
+	    	<h:outputLabel rendered="#{employeesBean.response == null || employeesBean.response.code != '801'}" >
+				<ui:insert name="findEmployees">
+					<ui:include src="/employee/findEmployees.xhtml" />
+				</ui:insert>
+			</h:outputLabel>
+			<h:outputLabel rendered="#{employeesBean.response.code == '801'}" >
+				<ui:insert name="findEmployees">
+					<ui:include src="/error/error-801.xhtml" />
+				</ui:insert>			
+		    </h:outputLabel>			    
 	    </div>
 	   
 	   </div>
