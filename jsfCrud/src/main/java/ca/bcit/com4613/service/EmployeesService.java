@@ -1,9 +1,11 @@
 package ca.bcit.com4613.service;
 
 import java.sql.SQLException;
+import java.util.List;
 import java.util.regex.Pattern;
 
 import ca.bcit.com4613.dao.EmployeesDAO;
+import ca.bcit.com4613.entity.Employee;
 import ca.bcit.com4613.utility.ReadPropertiesFile;
 import ca.bcit.com4613.utility.Response;
 
@@ -12,13 +14,22 @@ public class EmployeesService {
 	String user, pass, driver, url;
 	EmployeesDAO empDAO;
 	
-	public EmployeesService() {
-		
+	public EmployeesService() {		
 		user = ReadPropertiesFile.getString("db", "user");
 		pass = ReadPropertiesFile.getString("db", "pass");
 		driver = ReadPropertiesFile.getString("db", "driver");
 		url = ReadPropertiesFile.getString("db", "url");
 		empDAO = new EmployeesDAO(driver, url, user, pass);		
+	}
+	
+	//returns all the employee in the table
+	public List<Employee> getEmployees() {
+		try {
+			return empDAO.getEmployees();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 	
 	public Response findEmployeeById(String id) {
