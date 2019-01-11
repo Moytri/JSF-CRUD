@@ -1,0 +1,51 @@
+BODY
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	background: url(images/mainbackground.jpg);
+	background-attachment: fixed;
+	background-repeat: repeat-x;
+    BACKGROUND-COLOR: 999966;
+	padding-top: 3px;
+	padding-left: 10px;
+	
+}
+
+h1
+{
+	font-family:  Verdana, Arial, Helvetica, sans-serif;
+	font-size: 22pt;
+	color: black;
+}
+
+h2
+{
+	font-family:  Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	color: black;
+	
+}
+
+.header {
+	position: absolute;	
+	width: 97%;
+	height: 20%;
+	BACKGROUND-COLOR: #999966;
+}
+
+#mainDoc {
+
+	position: CENTER;
+	
+	padding: 0 0 20px 0; /*top right bottom left*/ 
+	
+	margin-top: 180px; 
+	
+	margin-left:15px;
+
+}
+
+
+
+
+
