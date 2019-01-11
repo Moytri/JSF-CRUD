@@ -1,0 +1,25 @@
+
+.emp-table{   
+	border-collapse:collapse;
+	width: 50%
+}
+
+.emp-table-header{
+	text-align:center;
+	background:none repeat scroll 0 0 #E5E5E5;
+	border-bottom:1px solid #BBBBBB;
+	font-style: bold;
+	padding:8px;
+}
+
+.emp-table-odd-row{
+	text-align:center;
+	background:none repeat scroll 0 0 #FBFFFB;
+	border-top:1px solid #BBBBBB;
+}
+
+.emp-table-even-row{
+	text-align:center;
+	background:none repeat scroll 0 0 #C2F3BF;
+	border-top:1px solid #BBBBBB;
+}
