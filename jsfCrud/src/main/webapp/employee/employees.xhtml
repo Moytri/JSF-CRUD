@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html  xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:h="http://java.sun.com/jsf/html" 
+		xmlns:f="http://java.sun.com/jsf/core" 
+		xmlns:p="http://primefaces.org/ui"
+		xmlns:ui="http://java.sun.com/jsf/facelets">
+   <h:head>
+   		<h:outputStylesheet library="css" name="style.css"/>
+   </h:head>
+   <h:body>
+		<h:form id="tableForm">
+			
+			<p:dataTable id="employeeDataTable" value="#{employeesBean.allEmployees}" var="e" lazy="true" selection="#{employeesBean.employee}" selectionMode="single" 
+						rows="#{employeeBean.allEmployees.rowCount}"
+						paginator="true"						
+						paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+			            rowsPerPageTemplate="5,10,15" >
+
+				<p:column headerText="#{msgs.index}">
+					<h:outputText value="#{employeeBean.allEmployees.rowIndex}" />
+				</p:column>
+				
+				<p:column headerText="#{msgs.col1}">
+					<h:outputText value="#{e.id}" />
+				</p:column>
+				<p:column headerText="#{msgs.col2}" sortBy="#{e.firstName}" sortable="true">
+					<h:outputText value="#{e.firstName}" />
+				</p:column>
+				<p:column headerText="#{msgs.col3}">
+					<h:outputText value="#{e.lastName}" />
+				</p:column>
+				<p:column headerText="#{msgs.col4}" >
+					<h:outputText value="#{e.dob}"><f:convertDateTime pattern="yyyy/MM/dd"/></h:outputText>
+				</p:column>
+			</p:dataTable>
+		</h:form>   
+     
+   </h:body>
+   
+</html>
