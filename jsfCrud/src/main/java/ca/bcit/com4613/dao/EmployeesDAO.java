@@ -5,6 +5,11 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import ca.bcit.com4613.entity.Employee;
+import ca.bcit.com4613.utility.Utility;
 
 public class EmployeesDAO {
 
@@ -18,7 +23,10 @@ public class EmployeesDAO {
 		this.url = url;
 		this.user = user;
 		this.pass = password;
-		this.conn = connect(driver, url, user, password);
+	}
+	
+	public void connect() {
+		connect(driver, url, user, pass);
 	}
 	
 	public Connection connect(String driver, String url, String user, String password) {
@@ -37,7 +45,29 @@ public class EmployeesDAO {
 		return conn;
 	}
 	
+	public List<Employee> getEmployees() throws SQLException {
+		List<Employee> employees = new ArrayList<Employee>();
+		connect();
+		String query = "Select * from A01062206_Employees";
+		
+		statement = conn.createStatement();
+		queryResults = statement.executeQuery(query);
+		
+		while(queryResults.next()) {
+			Employee emp = new Employee();
+	
+	    	emp.setID(queryResults.getString(1));
+	    	emp.setFirstName(queryResults.getString(2));
+	        emp.setLastName(queryResults.getString(3));
+	        emp.setDob(Utility.convertFromSqlToUtil(queryResults.getDate(4)));
+	        employees.add(emp);
+		}
+
+		return employees;
+	}
+	
 	public String getEmployeeById(String id) throws SQLException {
+		connect();
 		String query = "Select * from A01062206_Employees Where ID = '" + id.trim() + "' ";
 		statement = conn.createStatement();
 		queryResults = statement.executeQuery(query);
